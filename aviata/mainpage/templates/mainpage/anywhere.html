@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+<section>
+    <div class="container text-start  --wide mx-auto flex max-w-screen-xl justify-between" id="footer">
+        <div class="row justify-content-start">
+            <div class="col-lg-4">
+                <div><a class="navbar-brand" href="/">{% block brand %}<img src="{% static 'Aviata_logo.png' %}">{% endblock %}</a></div>
+            </div>
+            <div class="col-lg-4">
+                <div>
+                    <p class="text-dark"><strong>Авиата — лидер по продаже билетов в Казахстане</strong></p>
+                    <p>по данным журнала <a href="">Forbes Kazakhstan </a>, сентябрь 2020</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div><a href="" >Обмен или возврат</a></div>
+            </div>
+
+        </div>
+    </div>
+
+    
+        <h1>Купить или забронировать авиабилеты онлайн в Казахстане</h1>
+        <button class="btn btn-success"><a href="{% url 'main'}" class="text-light text-decoration-none">В ОДНУ СТОРОНУ</a></button>
+        <button class="btn btn-success"><a href="{% url 'main'}" class="text-light text-decoration-none">ТУДА И ОБРАТНО</a></button>
+        <button class="btn btn-success"><a href="{% url 'main'}" class="text-light text-decoration-none">СЛОЖНЫЙ МАРШРУТ</a></button>
+        <button class="btn btn-success"><a href="" class="text-light text-decoration-none">КУДА УГОДНО</a></button><br><br>
+
+        {% if user.is_superuser %}
+            <a href="{% url 'add' %}" class="btn btn-secondary btn-sm">Добавить</a>
+        {% endif %}
+        <br><br>
+        <div>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                {% for item in items %}
+                <button type="button" class="btn btn-info" style="width: 500px; ">
+                    <a href="/anywhere/{{item.pk}}/" class="text-light text-decoration-none">
+                        <p class="text-light"><span>{{ item.company }}</span></p>
+                        <p class="text-light"><span>{{ item.city1 }} - {{ item.city2 }}</span></p>
+                        <p class="text-light"><span>Time: {{ item.time1 }} - {{ item.time2 }}</span></p>
+                        {% if user.is_superuser %}
+                            <a href="{% url 'change' item.pk %}" class="btn btn-secondary btn-sm">Изменить</a>
+                        {% else %}
+                            <a href="#" class="btn btn-secondary btn-sm">Добавить +</a>
+                        {% endif %}
+                    </a>
+                </button>
+                <br><br>
+                {%endfor%}
+                <br><br>
+            </div>
+            <br><br>
+        </div>
+
+        {% endblock %}

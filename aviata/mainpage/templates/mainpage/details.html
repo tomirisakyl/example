@@ -1,0 +1,77 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container text-start  --wide mx-auto flex max-w-screen-xl justify-between" id="footer">
+        <div class="row justify-content-start">
+            <div class="col-lg-4">
+                <div><a class="navbar-brand" href="/">{% block brand %}<img src="{% static 'Aviata_logo.png' %}">{% endblock %}</a></div>
+            </div>
+            <div class="col-lg-4">
+                <div>
+                    <p class="text-dark"><strong>Авиата — лидер по продаже билетов в Казахстане</strong></p>
+                    <p>по данным журнала <a href="">Forbes Kazakhstan </a>, сентябрь 2020</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div><a href="" >Обмен или возврат</a></div>
+            </div>
+
+        </div>
+    </div>
+
+    
+        <h1>Купить или забронировать авиабилеты онлайн в Казахстане</h1>
+        <button class="btn btn-success"><a href="{% url 'main'}" class="text-light text-decoration-none">В ОДНУ СТОРОНУ</a></button>
+        <button class="btn btn-success"><a href="{% url 'main'}" class="text-light text-decoration-none">ТУДА И ОБРАТНО</a></button>
+        <button class="btn btn-success"><a href="{% url 'main'}" class="text-light text-decoration-none">СЛОЖНЫЙ МАРШРУТ</a></button>
+        <button class="btn btn-success"><a href="" class="text-light text-decoration-none">КУДА УГОДНО</a></button><br><br>
+
+        
+        <div>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            
+                <button type="button" class="btn btn-info" style="width: 500px; ">
+                    <a href="#" class="text-light text-decoration-none">
+                        <p class="text-light"><span>Company: {{ items.company }}</span></p>
+                        <p class="text-light"><span>From: {{ items.city1 }}</span></p>
+                        <p class="text-light"><span>To: {{ items.city2 }}</span></p>
+                        <p class="text-light"><span>Leaving Time: {{ items.time1 }}</span></p>
+                        <p class="text-light"><span>Arriving Time: {{ items.time2 }}</span></p>
+                        <p class="text-light"><span>Price: {{ items.price }} kzt</span></p>
+                        
+                    </a>
+                </button>
+                
+            </div>
+            <br><br>
+        </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

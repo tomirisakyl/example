@@ -1,0 +1,18 @@
+<body>
+    <!-- <a href="{{ MEDIA_URL }}ts.txt">Upload your image</a> -->
+    <!-- <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file_upload">
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    {% if instance %}
+        <img src="{{ instance.image_field.url }}">
+    {% endif %}
+</body>
+    </body>

@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+{% block content %}
+<h1>Change</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="company" class="form-label">Company</label>
+        <input type="text" class="form-control" id="company" aria-describedby="textHelp" name="company" value="{{item.company }}">
+    </div>
+    <div class="mb-3">
+        <label for="city1" class="form-label">City 1</label>
+        <input type="text" class="form-control" id="city1" aria-describedby="textHelp" name="city1" value="{{item.city1 }}">
+    </div>
+    <div class="mb-3">
+        <label for="city2" class="form-label">City 2</label>
+        <input type="text" class="form-control" id="city2" aria-describedby="textHelp" name="city2" value="{{item.city2}}">
+    </div>
+    <div class="mb-3">
+        <label for="time1" class="form-label">Time 1</label>
+        <input type="datetime-local" class="form-control" id="time2" aria-describedby="textHelp" name="time1" value="{{item.time1}}">
+    </div>
+    <div class="mb-3">
+        <label for="time2" class="form-label">Time 2</label>
+        <input type="datetime-local" class="form-control" id="time2" aria-describedby="textHelp" name="time2" value="{{item.time2}}">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" aria-describedby="textHelp" name="price" value="{{item.price}}">
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck" name="deler">
+        <label class="form-check-label" for="exampleCheck">Delete</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    
+  
+</form>
+        <br><br><br><br><br><br><br><br><br>
+{% endblock %}

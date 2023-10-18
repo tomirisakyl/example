@@ -1,0 +1,72 @@
+{% extends 'home.html' %}
+{% block content %}
+      <form class="row g-3" method="post">
+            {% csrf_token %}
+            
+        <div class="mb-3">
+          <label for="company" class="form-label">Company</label>
+          {{form.company }}
+        </div>
+        <div class="mb-3">
+          <label for="city1" class="form-label">City 1</label>
+          {{form.city1 }}
+        </div>
+        <div class="mb-3">
+          <label for="city2" class="form-label">City 2</label>
+          {{form.city2 }}
+        </div>
+        <div class="mb-3">
+          <label for="time1" class="form-label">Time 1</label>
+          {{form.time1}}
+        </div>
+        <div class="mb-3">
+          <label for="time2" class="form-label">Time 2</label>
+          {{form.time2}}
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          {{form.price}}
+        </div>
+        <div class="col-md-6">
+          <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+      <br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br> 
+
+
+      
+{% endblock %}
+
+
+
+<!-- <div class="col-md-12">
+              <label for="inputEmail" class="form-label">Company</label>
+              {{ form.company }}
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail" class="form-label">City 1</label>
+              {{ form.city1 }}
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail" class="form-label">City 2</label>
+              {{ form.city2 }}
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail" class="form-label" type = "datetime-local">Time 1</label>
+              {{ form.time1 }}
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail" class="form-label" type = "datetime-local">Time 2</label>
+              {{ form.time2 }}
+            </div>
+            <div class="col-md-6">
+              <label for="inputEmail" class="form-label" type="number">Price</label>
+              {{ form.price }}
+            </div>
+            <div class="col-md-6">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </form>
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br> -->
